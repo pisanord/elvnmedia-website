@@ -25,7 +25,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
 .nav-r a{color:var(--sub);font-size:11px;letter-spacing:.14em;text-decoration:none;text-transform:uppercase;transition:color .2s}
 .nav-r a:hover{color:var(--beige-d)}
 .btn{background:var(--text);color:var(--bg);padding:10px 22px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s}
-.btn:hover{background:var(--beige-d);transform:translateY(-1px)}
+.btn:hover{background:var(--beige);color:var(--text);transform:translateY(-1px)}
 .btn-lg{padding:16px 46px;font-size:13px;border-radius:100px}
 .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border2);padding:14px 32px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s}
 .btn-outline:hover{border-color:var(--beige-d);color:var(--beige-d)}
@@ -196,7 +196,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
     <a href="#leistungen">Leistungen</a>
     <a href="#aboutSection">Über uns</a>
     <a href="#kontakt">Kontakt</a>
-    <a href="#formPanel" class="btn" onclick="openForm(event)">Kostenloses Erstgespräch</a>
+    <a href="mailto:j.lebold@pisanord.de?subject=Kostenloses%20Erstgespr%C3%A4ch" class="btn">Kostenloses Erstgespräch</a>
   </div>
 </nav>
 <section class="hero">
@@ -207,7 +207,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
   </div>
   <p>Eleven Media verbindet Strategie mit Kreativität – für Marken, die bleiben und weiter gehen als der Standard.</p>
   <div class="hero-ctas">
-    <a href="#formPanel" class="btn btn-lg" onclick="openForm(event)">Kostenloses Erstgespräch vereinbaren</a>
+    <a href="mailto:j.lebold@pisanord.de?subject=Kostenloses%20Erstgespr%C3%A4ch" class="btn btn-lg">Kostenloses Erstgespräch vereinbaren</a>
     <a href="#leistungen" class="btn-outline">Leistungen entdecken</a>
   </div>
 </section>
@@ -228,7 +228,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
     <div class="svc-card"><div class="svc-badge">3</div><div class="svc-t">Drehtage &amp; Strategieberatung</div><div class="svc-d">Gesamtes Social Media Management inklusive.</div></div>
     <div class="svc-card"><div class="svc-badge">4</div><div class="svc-t">Komplette Umsetzung</div><div class="svc-d">Von der Idee bis zum Posten der Videos.</div></div>
   </div>
-  <div class="svc-cta"><button class="btn" onclick="openForm(event)">Paket anfragen</button></div>
+  <div class="svc-cta"><a href="mailto:j.lebold@pisanord.de?subject=Paket-Anfrage" class="btn">Paket anfragen</a></div>
 </section>
 <section class="why-sec">
   <div class="why-intro">
@@ -288,20 +288,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
   <div class="sec-pill" style="margin-bottom:1.5rem">Loslegen</div>
   <h2>Bereit für den<br>nächsten <em>Schritt?</em></h2>
   <p>Jetzt starten – kostenlos &amp; unverbindlich</p>
-  <a href="#formPanel" class="btn btn-lg" onclick="openForm(event)">Kostenloses Erstgespräch vereinbaren</a>
+  <a href="mailto:j.lebold@pisanord.de?subject=Kostenloses%20Erstgespr%C3%A4ch" class="btn btn-lg">Kostenloses Erstgespräch vereinbaren</a>
 </section>
-<div class="form-wrap" id="formPanel">
-  <div class="form-glass">
-    <button class="form-close" onclick="closeForm()">×</button>
-    <h2>Wir bringen deine Marke aufs nächste <span>Level</span></h2>
-    <div class="fg-row"><div class="fg"><label>Name</label><input type="text" placeholder="Max Mustermann"></div><div class="fg"><label>E-Mail</label><input type="email" placeholder="max@example.com"></div></div>
-    <div class="fg"><label>Service</label><select><option>Bitte wählen...</option><option>Rundum sorglos Paket</option><option>Social Media Management</option><option>Content Produktion</option><option>Branding &amp; Strategie</option><option>Sonstiges</option></select></div>
-    <div class="fg-row"><div class="fg"><label>Unternehmen</label><input type="text" placeholder="Firmenname"></div><div class="fg"><label>Budget / Monat (€)</label><div class="budget-wrap"><button class="b-btn" onclick="adj(-500)">−</button><input id="bI" type="text" value="2000"><button class="b-btn" onclick="adj(500)">+</button></div></div></div>
-    <div class="fg"><label>Anliegen</label><textarea placeholder="Erzähl uns von deinem Projekt..."></textarea></div>
-    <div style="text-align:center;margin-top:1.5rem"><button class="btn" style="padding:14px 40px">Anfrage senden</button></div>
-    <div class="form-foot">Antwort innerhalb von 24 Stunden.<br><a href="mailto:j.lebold@pisanord.de">j.lebold@pisanord.de</a> · <a href="tel:01709973190">0170 9973190</a></div>
-  </div>
-</div>
 <section class="contact" id="kontakt">
   <div class="contact-name">eleven<em>.</em> Media</div>
   <div class="contact-sub">der Pisa Nord GmbH</div>
@@ -315,9 +303,6 @@ function toggleBio(){
   t.classList.toggle('open');
   c.classList.toggle('show');
 }
-function openForm(e){if(e)e.preventDefault();var f=document.getElementById('formPanel');f.classList.add('show');setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'center'})},50)}
-function closeForm(){document.getElementById('formPanel').classList.remove('show')}
-function adj(d){var i=document.getElementById('bI'),v=parseInt(i.value)||0;if(v+d>=500)i.value=v+d}
 function tl(el){var b=el.querySelector('.tl-body'),a=el.querySelector('.tl-arrow'),open=b.classList.contains('show');document.querySelectorAll('.tl-item').forEach(function(i){i.classList.remove('active');i.querySelector('.tl-body').classList.remove('show');i.querySelector('.tl-arrow').classList.remove('open')});if(!open){el.classList.add('active');b.classList.add('show');a.classList.add('open')}}
 var done=false,cel=document.getElementById('vc');
 function ac(){if(done)return;done=true;var dur=1400,st=null;function step(t){if(!st)st=t;var p=Math.min((t-st)/dur,1),e=1-Math.pow(1-p,3),v=Math.round(e*100);cel.textContent=v>=100?'100 Mio.+':v<1?'0':v+' Mio.';if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
