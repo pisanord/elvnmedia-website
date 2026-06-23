@@ -98,8 +98,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
 
 .about-sec{padding:5.5rem 3rem;border-top:.5px solid var(--border)}
 .about-inner{display:grid;grid-template-columns:300px 1fr;gap:5rem;align-items:start;max-width:900px}
-.about-oval{width:240px;height:300px;border-radius:120px 120px 20px 20px;border:.5px dashed var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center}
-.about-oval span{font-size:9px;color:rgba(28,14,4,.18);letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:0 1.5rem}
+.about-oval{width:240px;height:300px;border-radius:120px 120px 20px 20px;border:.5px solid var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 10px 40px rgba(28,14,4,.12)}
+.about-oval img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .about-name{font-family:'Playfair Display',serif;font-size:26px;color:var(--text);margin-top:1.2rem;margin-bottom:.2rem}
 .about-role{font-size:10px;color:var(--sub);letter-spacing:.18em;text-transform:uppercase}
 .about-bio .sec-pill{margin-bottom:1.5rem}
@@ -270,7 +270,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overf
 </section>
 <section class="about-sec" id="aboutSection">
   <div class="about-inner">
-    <div><div class="about-oval"><span>Foto hier einfügen</span></div><div class="about-name">Joelle Lebold</div><div class="about-role">Gründerin &amp; Geschäftsführerin</div></div>
+    <div><div class="about-oval"><img src="joelle-lebold.jpg" alt="Joelle Lebold – Gründerin &amp; Geschäftsführerin von Eleven Media"></div><div class="about-name">Joelle Lebold</div><div class="about-role">Gründerin &amp; Geschäftsführerin</div></div>
     <div class="about-bio">
       <div class="sec-pill bio-toggle-pill" id="bioToggle" onclick="toggleBio()">
         Über Joelle Lebold <span class="bio-arrow">›</span>
