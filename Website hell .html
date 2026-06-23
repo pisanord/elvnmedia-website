@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eleven Media – Premium Marketing Agentur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F4;--bg2:#FFFFFF;--bg3:#F2E8DC;--bg4:#EAD9C8;
+  --beige:#d4b896;--beige-d:#BEA078;--beige-ll:rgba(212,184,150,.11);--beige-l:rgba(212,184,150,.22);
+  --text:#1C0E04;--sub:#7A5E3A;
+  --border:rgba(212,184,150,.28);--border2:rgba(212,184,150,.48)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#EDE5D8}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;max-width:1280px;margin:0 auto;box-shadow:0 0 60px rgba(28,14,4,.1)}
+
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;border-bottom:.5px solid var(--border2);position:sticky;top:0;z-index:100;background:rgba(250,248,244,.97);backdrop-filter:blur(14px)}
+.logo{display:flex;flex-direction:column;line-height:1;gap:.28rem;text-decoration:none}
+.logo-main{font-family:'Playfair Display',serif;font-size:20px;color:var(--text);line-height:1}
+.logo-main em{color:var(--beige-d);font-style:normal}
+.logo-gmbh{font-size:9px;color:var(--sub);letter-spacing:.07em;opacity:.55;font-family:'Inter',sans-serif;font-weight:400}
+.nav-r{display:flex;align-items:center;gap:2.5rem}
+.nav-r a{color:var(--sub);font-size:11px;letter-spacing:.14em;text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-r a:hover{color:var(--beige-d)}
+.btn{background:var(--text);color:var(--bg);padding:10px 22px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s}
+.btn:hover{background:var(--beige-d);transform:translateY(-1px)}
+.btn-lg{padding:16px 46px;font-size:13px;border-radius:100px}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border2);padding:14px 32px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s}
+.btn-outline:hover{border-color:var(--beige-d);color:var(--beige-d)}
+
+.hero{padding:8rem 3rem 6rem;border-bottom:.5px solid var(--border);position:relative;overflow:hidden;text-align:center}
+.hero-glow1{position:absolute;width:700px;height:500px;background:radial-gradient(ellipse,rgba(212,184,150,.28) 0%,transparent 65%);top:50%;left:50%;transform:translate(-35%,-60%);pointer-events:none;border-radius:50%}
+.hero-glow2{position:absolute;width:400px;height:400px;background:radial-gradient(ellipse,rgba(212,184,150,.18) 0%,transparent 65%);top:20%;left:5%;pointer-events:none;border-radius:50%}
+.hero-pill{display:inline-flex;align-items:center;gap:.7rem;background:var(--beige-ll);border:1px solid var(--border);border-radius:100px;padding:.55rem 1.4rem;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--beige-d);margin-bottom:2.5rem;position:relative;font-weight:600}
+.hero-pill::before{content:'';width:7px;height:7px;background:var(--beige);border-radius:50%}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(52px,6vw,86px);font-weight:700;line-height:1.02;color:var(--text);max-width:860px;margin:0 auto 2rem;letter-spacing:-.025em;position:relative}
+.hero h1 em{color:var(--beige-d);font-style:italic}
+.hero p{font-size:17px;color:var(--sub);max-width:490px;line-height:1.9;margin:0 auto 3rem;position:relative}
+.hero-ctas{display:flex;gap:1.2rem;align-items:center;justify-content:center;flex-wrap:wrap;position:relative}
+
+.stats-sec{padding:3.5rem 3rem;border-bottom:.5px solid var(--border)}
+.stats-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:860px;margin:0 auto}
+.stat-card{background:var(--bg2);border:.5px solid var(--border);border-radius:24px;padding:2.8rem 2rem;text-align:center;box-shadow:0 4px 28px rgba(28,14,4,.05);transition:all .35s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--beige);transform:scaleX(0);transform-origin:center;transition:transform .4s cubic-bezier(.2,1,.3,1)}
+.stat-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(28,14,4,.09)}
+.stat-card:hover::before{transform:scaleX(1)}
+.stat-n{font-family:'Playfair Display',serif;font-size:60px;color:var(--text);font-weight:700;line-height:1;letter-spacing:-.03em;margin-bottom:.5rem}
+.stat-n em{color:var(--beige-d);font-style:normal}
+.stat-l{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sub)}
+
+.sec{padding:5.5rem 3rem}
+.sec-pill{display:inline-flex;align-items:center;gap:.6rem;background:var(--beige-ll);border:1px solid var(--border);border-radius:100px;padding:.45rem 1.1rem;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--beige-d);margin-bottom:1rem;font-weight:600}
+.sec-pill::before{content:'';width:6px;height:6px;background:var(--beige);border-radius:50%}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(34px,3.5vw,48px);color:var(--text);font-weight:700;margin-bottom:.6rem;line-height:1.1}
+.sec-title em{color:var(--beige-d);font-style:normal}
+.sec-sub{font-size:14px;color:var(--sub);margin-bottom:3.5rem;max-width:520px;line-height:1.75}
+
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:780px}
+.svc-card{background:var(--bg2);border:.5px solid var(--border);border-radius:20px;padding:2.8rem;box-shadow:0 3px 20px rgba(28,14,4,.04);transition:all .35s;position:relative;overflow:hidden}
+.svc-card::after{content:'';position:absolute;bottom:0;left:1.5rem;right:1.5rem;height:2px;background:var(--beige);opacity:0;transition:opacity .3s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 14px 44px rgba(28,14,4,.09);border-color:var(--border2)}
+.svc-card:hover::after{opacity:1}
+.svc-badge{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;background:var(--beige-ll);border-radius:14px;font-family:'Playfair Display',serif;font-size:20px;color:var(--beige-d);font-weight:700;margin-bottom:1.4rem}
+.svc-t{font-size:17px;color:var(--text);font-weight:600;margin-bottom:.5rem}
+.svc-d{font-size:13px;color:var(--sub);line-height:1.75}
+.svc-cta{margin-top:2.5rem}
+
+.why-sec{padding:5.5rem 3rem;background:var(--bg3);border-top:.5px solid var(--border)}
+.why-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3.5rem}
+.why-h2{font-family:'Playfair Display',serif;font-size:clamp(34px,3.5vw,48px);color:var(--text);font-weight:700;line-height:1.08}
+.why-h2 em{color:var(--beige-d);font-style:normal}
+.why-lead{font-size:15px;color:var(--sub);line-height:1.9}
+.why-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px}
+.why-card{background:var(--bg2);border:.5px solid rgba(28,14,4,.07);border-radius:18px;padding:2.2rem;box-shadow:0 2px 16px rgba(28,14,4,.04);transition:all .3s}
+.why-card:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(28,14,4,.08);border-color:var(--border)}
+.why-icon{font-size:26px;margin-bottom:.9rem;display:block}
+.why-t{font-size:14px;color:var(--text);font-weight:600;margin-bottom:.4rem}
+.why-d{font-size:12px;color:var(--sub);line-height:1.7}
+
+.steps-sec{padding:5.5rem 3rem;border-top:.5px solid var(--border);background:var(--bg2)}
+.timeline{max-width:860px;position:relative;padding-left:50px}
+.timeline::before{content:'';position:absolute;left:21px;top:16px;bottom:16px;width:1px;background:linear-gradient(180deg,transparent,var(--border2) 15%,var(--border2) 85%,transparent)}
+.tl-item{position:relative;margin-bottom:12px;cursor:pointer}
+.tl-dot{position:absolute;left:-37px;top:21px;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--border2);background:var(--bg2);z-index:2;transition:all .3s}
+.tl-item.active .tl-dot,.tl-item:hover .tl-dot{background:var(--beige);border-color:var(--beige);box-shadow:0 0 0 6px rgba(212,184,150,.18)}
+.tl-card{background:var(--bg3);border:.5px solid var(--border);border-radius:16px;padding:2rem 2.4rem;transition:all .35s}
+.tl-item:hover .tl-card{border-color:var(--border2)}
+.tl-item.active .tl-card{border-color:var(--beige);background:var(--bg2);box-shadow:0 6px 28px rgba(212,184,150,.14)}
+.tl-head{display:flex;align-items:center}
+.tl-num{font-size:11px;color:var(--sub);letter-spacing:.15em;text-transform:uppercase}
+.tl-label{font-size:16px;color:var(--text);font-weight:600;flex:1;margin-left:1rem}
+.tl-arrow{color:var(--sub);font-size:16px;transition:transform .3s;user-select:none;margin-left:.5rem}
+.tl-arrow.open{transform:rotate(180deg)}
+.tl-body{padding-top:.9rem;font-size:13px;color:var(--sub);line-height:1.9;display:none;border-top:.5px solid var(--border);margin-top:.5rem}
+.tl-body.show{display:block}
+
+.about-sec{padding:5.5rem 3rem;border-top:.5px solid var(--border)}
+.about-inner{display:grid;grid-template-columns:300px 1fr;gap:5rem;align-items:start;max-width:900px}
+.about-oval{width:240px;height:300px;border-radius:120px 120px 20px 20px;border:.5px dashed var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center}
+.about-oval span{font-size:9px;color:rgba(28,14,4,.18);letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:0 1.5rem}
+.about-name{font-family:'Playfair Display',serif;font-size:26px;color:var(--text);margin-top:1.2rem;margin-bottom:.2rem}
+.about-role{font-size:10px;color:var(--sub);letter-spacing:.18em;text-transform:uppercase}
+.about-bio .sec-pill{margin-bottom:1.5rem}
+.about-highlight{background:var(--beige-ll);border:.5px solid var(--border);border-radius:14px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;border-left:3px solid var(--beige)}
+.about-highlight p{font-family:'Playfair Display',serif;font-size:17px;color:var(--text);font-style:italic;line-height:1.5}
+.about-bio p{font-size:14px;color:var(--sub);line-height:1.95;margin-bottom:1rem}
+
+.cta-sec{padding:4.5rem 2rem;background:var(--bg4);border-top:.5px solid var(--border);text-align:center;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center}
+.cta-glow{display:none}
+.cta-sec h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,42px);color:var(--text);margin-bottom:.8rem;font-weight:700;position:relative;z-index:1;line-height:1.1}
+.cta-sec h2 em{color:var(--beige-d);font-style:normal}
+.cta-sec p{font-size:15px;color:var(--sub);margin-bottom:2rem;position:relative;z-index:1}
+.cta-sec .sec-pill{z-index:1}
+.cta-sec .btn{z-index:1}
+
+.form-wrap{display:none;padding:5rem 2.5rem;border-top:.5px solid var(--border);background:var(--bg)}
+.form-wrap.show{display:flex;justify-content:center}
+.form-glass{max-width:560px;width:100%;background:var(--bg2);border:.5px solid var(--border);border-radius:24px;padding:3rem;position:relative;box-shadow:0 12px 60px rgba(28,14,4,.07)}
+.form-close{position:absolute;top:1rem;right:1.2rem;background:none;border:none;color:var(--sub);font-size:24px;cursor:pointer;line-height:1;transition:color .2s}
+.form-close:hover{color:var(--text)}
+.form-glass h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--text);margin-bottom:2rem;text-align:center}
+.form-glass h2 span{color:var(--beige-d)}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:.4rem}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--bg3);border:.5px solid var(--border);border-radius:12px;padding:12px 16px;color:var(--text);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--beige);background:var(--bg2)}
+.fg textarea{height:100px;resize:vertical}
+.fg select{appearance:none;cursor:pointer}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.budget-wrap{display:flex;align-items:center;gap:6px}
+.budget-wrap input{text-align:center;border-radius:12px;flex:1;padding:9px 4px}
+.b-btn{background:var(--beige-ll);border:1px solid var(--border);color:var(--beige-d);width:40px;height:40px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;border-radius:12px;flex-shrink:0;font-weight:700}
+.b-btn:hover{background:rgba(212,184,150,.3)}
+.form-foot{text-align:center;margin-top:1.5rem;font-size:12px;color:rgba(28,14,4,.28);line-height:1.9}
+.form-foot a{color:var(--beige-d);text-decoration:none}
+
+.contact{padding:3.5rem;border-top:.5px solid var(--border2);text-align:center;background:var(--bg2)}
+.contact-name{font-family:'Playfair Display',serif;font-size:22px;color:var(--text);margin-bottom:.3rem}
+.contact-name em{color:var(--beige-d);font-style:normal}
+.contact-sub{font-size:10px;color:var(--sub);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem;opacity:.5}
+.contact-info{font-size:12px;color:var(--sub);line-height:2.3}
+.contact-info a{color:var(--beige-d);text-decoration:none}
+.footer{padding:1.2rem 3rem;border-top:.5px solid var(--border);display:flex;justify-content:space-between;font-size:10px;color:rgba(28,14,4,.2);letter-spacing:.06em;background:var(--bg2)}
+
+/* SVG icons for why-cards */
+.why-svg{width:26px;height:26px;stroke:var(--beige-d);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;fill:none;display:block;margin-bottom:.9rem;flex-shrink:0}
+
+/* H1 glow wrap */
+.h1-glow-wrap{position:relative;display:inline-block}
+.h1-glow-circle{position:absolute;width:700px;height:340px;background:radial-gradient(ellipse,rgba(212,184,150,.28) 0%,transparent 60%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%;z-index:0}
+.h1-glow-wrap h1{position:relative;z-index:1}
+
+/* CTA glow circle – more prominent circular */
+.cta-circle-glow{position:absolute;width:560px;height:280px;background:radial-gradient(ellipse,rgba(212,184,150,.32) 0%,transparent 60%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%;z-index:0}
+
+/* Bio toggle */
+.bio-toggle-pill{cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:.6rem;transition:all .2s}
+.bio-toggle-pill .bio-arrow{font-size:12px;transition:transform .35s cubic-bezier(.2,1,.3,1);display:inline-block}
+.bio-toggle-pill.open .bio-arrow{transform:rotate(90deg)}
+.bio-content{display:none;animation:bioIn .45s cubic-bezier(.2,1,.3,1)}
+.bio-content.show{display:block}
+@keyframes bioIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ── ALLES MITTIG ── */
+.sec,.why-sec,.steps-sec,.about-sec,.stats-sec{display:flex;flex-direction:column;align-items:center;text-align:center}
+.sec-title,.sec-sub{text-align:center;margin-left:auto;margin-right:auto}
+.svc-grid{margin:0 auto}
+.svc-card{text-align:center}
+.svc-badge{margin:0 auto 1.4rem;display:flex}
+.svc-cta{text-align:center}
+.why-intro{display:flex;flex-direction:column;align-items:center;gap:1.5rem;margin-bottom:3.5rem;max-width:640px;text-align:center}
+.why-h2,.why-lead{text-align:center;max-width:580px;margin-left:auto;margin-right:auto}
+.why-cards{margin:0 auto}
+.why-card{text-align:center}
+.why-svg{margin:0 auto .9rem;display:block}
+.timeline{margin:0 auto}
+.about-inner{display:flex;flex-direction:column;align-items:center;max-width:580px;text-align:center;gap:2rem}
+.about-bio{text-align:center;width:100%}
+.about-bio .bio-content p{text-align:left}
+.about-oval{margin:0 auto}
+.sec-pill{margin-left:auto;margin-right:auto}
+
+@media(max-width:900px){.about-inner{grid-template-columns:1fr;gap:2.5rem;align-items:center;text-align:center}.about-inner>div:first-child{display:flex;flex-direction:column;align-items:center}.why-intro{grid-template-columns:1fr;gap:2rem}}
+@media(max-width:768px){.nav{padding:.9rem 1.2rem;flex-wrap:wrap;gap:.8rem}.nav-r{gap:1rem;flex-wrap:wrap}.hero{padding:5rem 1.5rem 3.5rem}.hero h1{font-size:44px}.stats-inner{grid-template-columns:1fr}.svc-grid,.why-cards{grid-template-columns:1fr}.fg-row{grid-template-columns:1fr}.sec,.why-sec,.steps-sec,.about-sec,.cta-sec{padding:3.5rem 1.5rem}.footer{flex-direction:column;gap:.3rem;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="#" class="logo">
+    <span class="logo-main">eleven<em>.</em> Media</span>
+    <span class="logo-gmbh">der Pisa Nord GmbH</span>
+  </a>
+  <div class="nav-r">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#aboutSection">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#formPanel" class="btn" onclick="openForm(event)">Kostenloses Erstgespräch</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-glow1"></div><div class="hero-glow2"></div>
+  <div class="h1-glow-wrap">
+    <div class="h1-glow-circle"></div>
+    <h1>We don't stop<br>at <em>ten.</em></h1>
+  </div>
+  <p>Eleven Media verbindet Strategie mit Kreativität – für Marken, die bleiben und weiter gehen als der Standard.</p>
+  <div class="hero-ctas">
+    <a href="#formPanel" class="btn btn-lg" onclick="openForm(event)">Kostenloses Erstgespräch vereinbaren</a>
+    <a href="#leistungen" class="btn-outline">Leistungen entdecken</a>
+  </div>
+</section>
+<section class="stats-sec">
+  <div class="stats-inner">
+    <div class="stat-card"><div class="stat-n">4</div><div class="stat-l">Jahre Erfahrung</div></div>
+    <div class="stat-card"><div class="stat-n">98<em>%</em></div><div class="stat-l">Kundenzufriedenheit</div></div>
+    <div class="stat-card"><div class="stat-n" id="vc">0</div><div class="stat-l">Views generiert</div></div>
+  </div>
+</section>
+<section class="sec" id="leistungen">
+  <div class="sec-pill">Was wir tun</div>
+  <div class="sec-title">Rundum sorglos Paket für <em>Social Media</em></div>
+  <div class="sec-sub">Alles aus einer Hand – von der Idee bis zum viralen Post.</div>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-badge">1</div><div class="svc-t">Klares Branding</div><div class="svc-d">Einheitliche Serien mit Models, die zur Marke passen.</div></div>
+    <div class="svc-card"><div class="svc-badge">2</div><div class="svc-t">Mehr Reichweite &amp; Anfragen</div><div class="svc-d">Durch konsistente Präsenz &amp; virale Videos.</div></div>
+    <div class="svc-card"><div class="svc-badge">3</div><div class="svc-t">Drehtage &amp; Strategieberatung</div><div class="svc-d">Gesamtes Social Media Management inklusive.</div></div>
+    <div class="svc-card"><div class="svc-badge">4</div><div class="svc-t">Komplette Umsetzung</div><div class="svc-d">Von der Idee bis zum Posten der Videos.</div></div>
+  </div>
+  <div class="svc-cta"><button class="btn" onclick="openForm(event)">Paket anfragen</button></div>
+</section>
+<section class="why-sec">
+  <div class="why-intro">
+    <div><div class="sec-pill">Warum Eleven Media</div><h2 class="why-h2">Du verdienst das <em>Beste.</em></h2></div>
+    <p class="why-lead">Wir sind nicht irgendeine Agentur. Wir sind Eleven Media – gegründet mit dem Anspruch, deine Wünsche bestmöglich verwirklichen zu lassen. Jedes Projekt behandeln wir wie unser eigenes.</p>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <svg class="why-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/></svg>
+      <div class="why-t">Individuelle Strategie</div>
+      <div class="why-d">Strategisch entwickelt. Kreativ umgesetzt. Maßgeschneiderte Strategien für Content, der sichtbar wird und wirkt.</div>
+    </div>
+    <div class="why-card">
+      <svg class="why-svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <div class="why-t">Kreativität trifft Ergebnisse</div>
+      <div class="why-d">Wir entwickeln Trends, bleiben dem Wandel immer einen Schritt voraus und verstehen, wie der Algorithmus funktioniert.</div>
+    </div>
+    <div class="why-card">
+      <svg class="why-svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <div class="why-t">Dein fester Ansprechpartner</div>
+      <div class="why-d">Du erreichst immer die gleiche Person – jemand, der deine Marke versteht und mitdenkt, nicht nur abarbeitet.</div>
+    </div>
+    <div class="why-card">
+      <svg class="why-svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <div class="why-t">Partnerschaft auf Augenhöhe</div>
+      <div class="why-d">Dein Erfolg ist unser Erfolg. Wir arbeiten eng mit dir zusammen und behandeln jedes Projekt wie unser eigenes.</div>
+    </div>
+  </div>
+</section>
+<section class="steps-sec">
+  <div class="sec-pill">Dein Weg mit uns</div>
+  <div class="sec-title" style="margin-bottom:3rem">So geht es <em>weiter</em></div>
+  <div class="timeline">
+    <div class="tl-item" onclick="tl(this)"><div class="tl-dot"></div><div class="tl-card"><div class="tl-head"><span class="tl-num">01</span><span class="tl-label">Kennenlernen</span><span class="tl-arrow">▾</span></div><div class="tl-body">Wir lernen dich und dein Unternehmen kennen und besprechen, wie wir deine Marke auf das nächste Level bringen können.</div></div></div>
+    <div class="tl-item" onclick="tl(this)"><div class="tl-dot"></div><div class="tl-card"><div class="tl-head"><span class="tl-num">02</span><span class="tl-label">Vision deiner Marke besprechen</span><span class="tl-arrow">▾</span></div><div class="tl-body">Wir erarbeiten aufgrund deiner Informationen aus dem Kennenlernen welche Vision wir für deine Marke haben. Wir besprechen potenziellen Content für deine Brand, abgestimmt auf dein Unternehmen. Wir besprechen deine Ziele und Vorlieben, damit wir deine Brand perfekt repräsentieren können. Dabei klären wir noch letzte offene Fragen.</div></div></div>
+    <div class="tl-item" onclick="tl(this)"><div class="tl-dot"></div><div class="tl-card"><div class="tl-head"><span class="tl-num">03</span><span class="tl-label">Vertrag &amp; Content-Planung</span><span class="tl-arrow">▾</span></div><div class="tl-body">Wir halten alles vertraglich fest – ab diesem Moment beginnt die Content-Planung und Umsetzung.</div></div></div>
+    <div class="tl-item" onclick="tl(this)"><div class="tl-dot"></div><div class="tl-card"><div class="tl-head"><span class="tl-num">04</span><span class="tl-label">Produktion &amp; Veröffentlichung</span><span class="tl-arrow">▾</span></div><div class="tl-body">Nach rund 4 Wochen Content-Produktion geht alles erst nach deiner finalen Freigabe online. Danach beginnt der Moment, in dem du dich zurücklehnen kannst – wir übernehmen den Rest und führen deine Marke konsequent auf das nächste Level.</div></div></div>
+  </div>
+</section>
+<section class="about-sec" id="aboutSection">
+  <div class="about-inner">
+    <div><div class="about-oval"><span>Foto hier einfügen</span></div><div class="about-name">Joelle Lebold</div><div class="about-role">Gründerin &amp; Geschäftsführerin</div></div>
+    <div class="about-bio">
+      <div class="sec-pill bio-toggle-pill" id="bioToggle" onclick="toggleBio()">
+        Über Joelle Lebold <span class="bio-arrow">›</span>
+      </div>
+      <div class="bio-content" id="bioCont">
+        <p style="margin-top:1.2rem">Joelle Lebold ist Gründerin und Geschäftsführerin von Eleven Media. Mit über drei Jahren Erfahrung in einer der führenden Marketingagenturen in Köln hat sie sich tiefes Know-how im Bereich Content, Branding und digitale Strategie aufgebaut.</p>
+        <p>Sie hat an über 1.000 Videos mitgewirkt, davon mehr als 500 selbst moderiert, und war bereits das Gesicht einiger der bekanntesten Brands Deutschlands. Ihre Inhalte erreichten insgesamt über 100 Millionen Views, wodurch sie ein starkes Gespür für organische Viralität und performanten Content entwickelt hat.</p>
+        <p>Joelle stammt aus dem Raum Köln und bringt nun frischen kreativen Wind nach Hamburg. Mit einem ausgeprägten Gespür für Ästhetik erkennt sie in jedem Moment potenzielles Storytelling – und verwandelt Ideen konsequent in wirkungsstarken Content und starke Markenauftritte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cta-sec">
+  <div class="cta-circle-glow"></div>
+  <div class="sec-pill" style="margin-bottom:1.5rem">Loslegen</div>
+  <h2>Bereit für den<br>nächsten <em>Schritt?</em></h2>
+  <p>Jetzt starten – kostenlos &amp; unverbindlich</p>
+  <a href="#formPanel" class="btn btn-lg" onclick="openForm(event)">Kostenloses Erstgespräch vereinbaren</a>
+</section>
+<div class="form-wrap" id="formPanel">
+  <div class="form-glass">
+    <button class="form-close" onclick="closeForm()">×</button>
+    <h2>Wir bringen deine Marke aufs nächste <span>Level</span></h2>
+    <div class="fg-row"><div class="fg"><label>Name</label><input type="text" placeholder="Max Mustermann"></div><div class="fg"><label>E-Mail</label><input type="email" placeholder="max@example.com"></div></div>
+    <div class="fg"><label>Service</label><select><option>Bitte wählen...</option><option>Rundum sorglos Paket</option><option>Social Media Management</option><option>Content Produktion</option><option>Branding &amp; Strategie</option><option>Sonstiges</option></select></div>
+    <div class="fg-row"><div class="fg"><label>Unternehmen</label><input type="text" placeholder="Firmenname"></div><div class="fg"><label>Budget / Monat (€)</label><div class="budget-wrap"><button class="b-btn" onclick="adj(-500)">−</button><input id="bI" type="text" value="2000"><button class="b-btn" onclick="adj(500)">+</button></div></div></div>
+    <div class="fg"><label>Anliegen</label><textarea placeholder="Erzähl uns von deinem Projekt..."></textarea></div>
+    <div style="text-align:center;margin-top:1.5rem"><button class="btn" style="padding:14px 40px">Anfrage senden</button></div>
+    <div class="form-foot">Antwort innerhalb von 24 Stunden.<br><a href="mailto:j.lebold@pisanord.de">j.lebold@pisanord.de</a> · <a href="tel:01709973190">0170 9973190</a></div>
+  </div>
+</div>
+<section class="contact" id="kontakt">
+  <div class="contact-name">eleven<em>.</em> Media</div>
+  <div class="contact-sub">der Pisa Nord GmbH</div>
+  <div class="contact-info">Homsstraße 15 · 21220 Seevetal<br><a href="tel:01709973190">0170 9973190</a> · <a href="mailto:j.lebold@pisanord.de">j.lebold@pisanord.de</a><br><br>Vertretungsberechtigter Geschäftsführer: Sven Somerville</div>
+</section>
+<footer class="footer"><span>© 2025 Eleven Media · Pisa Nord GmbH</span><span>Alle Rechte vorbehalten</span></footer>
+<script>
+function toggleBio(){
+  var t=document.getElementById('bioToggle');
+  var c=document.getElementById('bioCont');
+  t.classList.toggle('open');
+  c.classList.toggle('show');
+}
+function openForm(e){if(e)e.preventDefault();var f=document.getElementById('formPanel');f.classList.add('show');setTimeout(function(){f.scrollIntoView({behavior:'smooth',block:'center'})},50)}
+function closeForm(){document.getElementById('formPanel').classList.remove('show')}
+function adj(d){var i=document.getElementById('bI'),v=parseInt(i.value)||0;if(v+d>=500)i.value=v+d}
+function tl(el){var b=el.querySelector('.tl-body'),a=el.querySelector('.tl-arrow'),open=b.classList.contains('show');document.querySelectorAll('.tl-item').forEach(function(i){i.classList.remove('active');i.querySelector('.tl-body').classList.remove('show');i.querySelector('.tl-arrow').classList.remove('open')});if(!open){el.classList.add('active');b.classList.add('show');a.classList.add('open')}}
+var done=false,cel=document.getElementById('vc');
+function ac(){if(done)return;done=true;var dur=1400,st=null;function step(t){if(!st)st=t;var p=Math.min((t-st)/dur,1),e=1-Math.pow(1-p,3),v=Math.round(e*100);cel.textContent=v>=100?'100 Mio.+':v<1?'0':v+' Mio.';if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)ac()})},{threshold:.5}).observe(cel);
+</script>
+</body>
+</html>
